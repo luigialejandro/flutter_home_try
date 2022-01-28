@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Mi Espacio'),
+          title: Text('Avatar y nombre'),
           //centerTitle: true,
           leading: IconButton(
               onPressed: () {
@@ -249,12 +249,37 @@ class _HomePageState extends State<HomePage> {
               Container(
                 margin: EdgeInsets.symmetric(vertical: 4, horizontal: 4),
                 width: double.infinity,
-                height: 145,
+                height: 175,
                 decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Colors.tealAccent[400],
                     borderRadius: BorderRadius.all(Radius.circular(15))),
                 child: Center(
-                    child: Text('Bienvenido Fulanit@ Merenganit@ lo que sea')),
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        //color: Colors.yellow,
+                        height: 100,
+                        width: 160,
+                        child: Image.asset('assets/images/logo_sat_movil.png'),
+                      ),
+                    ),
+                    Center(
+                      child: Container(
+                        child: Text('Bienvenid@ Nombre del Usuario logeado',
+                            style: TextStyle(fontSize: 18)),
+                      ),
+                    ),
+                    Center(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 10),
+                        child:
+                            Text('Mi espacio', style: TextStyle(fontSize: 25)),
+                      ),
+                    ),
+                  ],
+                )),
               ),
               Row(
                 children: [
@@ -263,9 +288,56 @@ class _HomePageState extends State<HomePage> {
                     height: MediaQuery.of(context).size.height,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Colors.indigo[300],
                       //borderRadius: BorderRadius.all(Radius.circular(15))),
                       //child: Center(child: Text('Bienvenido lo que sea')),
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 2),
+                            width: 70,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: Colors.cyan[100],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 2),
+                            width: 70,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: Colors.cyan[100],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 2),
+                            width: 70,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: Colors.cyan[100],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 2),
+                            width: 70,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                color: Colors.cyan[100],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Container(
@@ -273,7 +345,7 @@ class _HomePageState extends State<HomePage> {
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width - 100,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.red[300],
                       //borderRadius: BorderRadius.all(Radius.circular(15))),
                       //child: Center(child: Text('Bienvenido lo que sea')),
                     ),
@@ -288,7 +360,9 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.green[100],
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15))),
-                          child: Center(child: Text('Primer grupo')),
+                          child: Center(
+                              child: Text('Primer grupo',
+                                  style: TextStyle(fontSize: 25))),
                         ),
                         Container(
                           height: 200,
@@ -311,7 +385,9 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.green[100],
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15))),
-                          child: Center(child: Text('Segundo grupo')),
+                          child: Center(
+                              child: Text('Segundo grupo',
+                                  style: TextStyle(fontSize: 25))),
                         ),
                         Container(
                           height: 200,
