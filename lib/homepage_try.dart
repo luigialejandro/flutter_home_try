@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_home_try/show_image_from_listview.dart';
 
 class CardItem {
-  final String downloadedImage;
+  final Icon satIcon;
   final String title;
-  final String subtitle;
 
   const CardItem({
-    required this.downloadedImage,
+    required this.satIcon,
     required this.title,
-    required this.subtitle,
   });
 }
 
@@ -42,169 +40,85 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     });
   }
 
-  List<CardItem> items = [
+  List<CardItem> items0 = [
     const CardItem(
-      downloadedImage: "assets/images/Ambrym.png",
-      title: 'Ambrym',
-      subtitle: 'Vanuatu',
+      satIcon: Icon(Icons.qr_code_scanner, size: 45, color: Colors.white),
+      title: 'Verificador de códigos',
     ),
     const CardItem(
-      downloadedImage: "assets/images/arenal.png",
-      title: 'Arenal volcano',
-      subtitle: 'Costa Rica',
+      satIcon: Icon(Icons.smart_screen, size: 45, color: Colors.white),
+      title: 'Tutoriales',
     ),
     const CardItem(
-      downloadedImage: "assets/images/asama.png",
-      title: 'Asama volcano',
-      subtitle: 'Japan',
+      satIcon: Icon(Icons.campaign_rounded, size: 45, color: Colors.white),
+      title: 'Noticias',
     ),
     const CardItem(
-      downloadedImage: "assets/images/volcanfuegocolima.png",
-      title: 'Colima Fuego',
-      subtitle: 'Mexico',
+      satIcon: Icon(Icons.assessment_rounded, size: 45, color: Colors.white),
+      title: 'Indicadores',
     ),
     const CardItem(
-      downloadedImage: "assets/images/erebus.png",
-      title: 'Erebus',
-      subtitle: 'Antarctica',
+      satIcon: Icon(Icons.calendar_view_month, size: 45, color: Colors.white),
+      title: 'Calendario fiscal',
     ),
     const CardItem(
-      downloadedImage: "assets/images/Erta_Ale.png",
-      title: 'Erta Ale',
-      subtitle: 'Ethiopia',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/Hekla.png",
-      title: 'Hekla',
-      subtitle: 'Iceland',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/karymskynew.png",
-      title: 'Karymsky',
-      subtitle: 'Russia',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/kilauea.png",
-      title: 'Kilauea',
-      subtitle: 'Hawaiian islands USA',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/merapi.png",
-      title: 'Merapi',
-      subtitle: 'Indonesia',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/nyiragongo.png",
-      title: 'Nyiragongo',
-      subtitle: 'The Congo',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/Pacaya.png",
-      title: 'Pacaya',
-      subtitle: 'Guatemala',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/semeru.png",
-      title: 'Semeru',
-      subtitle: 'Indonesia',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/Stromboli.png",
-      title: 'Stromboli',
-      subtitle: 'Sicily Italy',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/teide.png",
-      title: 'Teide',
-      subtitle: 'Canary Islands Spain',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/tungurahua.png",
-      title: 'Tungurahua',
-      subtitle: 'Ecuador',
+      satIcon: Icon(Icons.qr_code_rounded, size: 45, color: Colors.white),
+      title: 'e.firma portable',
     ),
   ];
 
   List<CardItem> items1 = [
     const CardItem(
-      downloadedImage: "assets/images/bezy.png",
-      title: 'Bezymianny',
-      subtitle: 'Kamchatka Russia',
+      satIcon: Icon(Icons.star_rounded, size: 45, color: Colors.white),
+      title: 'Valorar',
     ),
     const CardItem(
-      downloadedImage: "assets/images/copague.png",
-      title: 'Copahue',
-      subtitle: 'Argentina',
+      satIcon: Icon(Icons.article, size: 45, color: Colors.white),
+      title: 'Acerca de',
     ),
     const CardItem(
-      downloadedImage: "assets/images/dukono.png",
-      title: 'Dukono',
-      subtitle: 'Indonesia',
+      satIcon: Icon(Icons.apps, size: 45, color: Colors.white),
+      title: 'Otras aplicaciones',
     ),
     const CardItem(
-      downloadedImage: "assets/images/etna.png",
-      title: 'Etna',
-      subtitle: 'Italy',
+      satIcon: Icon(Icons.event, size: 45, color: Colors.white),
+      title: 'Citas',
     ),
     const CardItem(
-      downloadedImage: "assets/images/eyjafj.png",
-      title: 'Eyjafjallajökull',
-      subtitle: 'Iceland',
+      satIcon: Icon(Icons.grading, size: 45, color: Colors.white),
+      title: 'Inscripción al RFC',
     ),
     const CardItem(
-      downloadedImage: "assets/images/fuegoguatemala.png",
-      title: 'Fuego',
-      subtitle: 'Guatemala',
+      satIcon: Icon(Icons.help, size: 45, color: Colors.white),
+      title: 'Preguntas frecuentes',
+    ),
+  ];
+
+  List<CardItem> items2 = [
+    const CardItem(
+      satIcon: Icon(Icons.markunread_mailbox_outlined,
+          size: 45, color: Colors.white),
+      title: 'Mensajes',
     ),
     const CardItem(
-      downloadedImage: "assets/images/Krakatoa.png",
-      title: 'Krakatau Anak',
-      subtitle: 'Indonesia',
+      satIcon: Icon(Icons.chat_bubble_outline, size: 45, color: Colors.white),
+      title: 'Chat uno a uno',
     ),
     const CardItem(
-      downloadedImage: "assets/images/masaya.png",
-      title: 'Masaya volcano',
-      subtitle: 'Honduras',
+      satIcon: Icon(Icons.call, size: 45, color: Colors.white),
+      title: 'MarcaSAT',
     ),
     const CardItem(
-      downloadedImage: "assets/images/Mayon.png",
-      title: 'Mayon Mountain',
-      subtitle: 'Philippines',
+      satIcon: Icon(Icons.exit_to_app, size: 45, color: Colors.white),
+      title: 'Cerrar sesión',
     ),
     const CardItem(
-      downloadedImage: "assets/images/nyamuragira.png",
-      title: 'Nyamuragira',
-      subtitle: 'The Congo',
+      satIcon: Icon(Icons.padding, size: 45, color: Colors.white),
+      title: 'Por definir',
     ),
     const CardItem(
-      downloadedImage: "assets/images/lengai.png",
-      title: 'Ol Doinyo Lengai',
-      subtitle: 'Tanzania',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/poas.png",
-      title: 'Poas volcano',
-      subtitle: 'Costa Rica',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/popocatepetl.png",
-      title: 'Popocatepetl',
-      subtitle: 'Mexico',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/elena.png",
-      title: 'Saint Helens',
-      subtitle: 'USA',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/Sakurajima1.png",
-      title: 'Sakurajima',
-      subtitle: 'Japan',
-    ),
-    const CardItem(
-      downloadedImage: "assets/images/sinabung.png",
-      title: 'Sinabung',
-      subtitle: 'Indonesia',
+      satIcon: Icon(Icons.padding, size: 45, color: Colors.white),
+      title: 'Por definir',
     ),
   ];
 
@@ -243,8 +157,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         //),
         bottom: TabBar(
           controller: _controller,
-          indicatorColor: Colors.white,
-          indicatorWeight: 3,
+          indicatorColor: Colors.red,
+          indicatorWeight: 4,
+          labelColor: Colors.red,
+          unselectedLabelColor: Colors.white,
           tabs: [
             Tab(icon: Icon(Icons.home), text: 'Contacto'),
             Tab(icon: Icon(Icons.assignment_ind_rounded), text: 'RFC'),
@@ -388,15 +304,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   style: TextStyle(fontSize: 25))),
                         ),
                         Container(
-                          height: 200,
+                          height: 130,
                           child: ListView.separated(
                             padding: EdgeInsets.all(2),
                             scrollDirection: Axis.horizontal,
-                            itemCount: 16,
+                            itemCount: 6,
                             separatorBuilder: (context, _) =>
-                                SizedBox(width: 2),
+                                SizedBox(width: 4),
                             itemBuilder: (context, index) =>
-                                buildCard(item: items[index]),
+                                buildCard(item: items0[index]),
                           ),
                         ),
                         Container(
@@ -413,15 +329,40 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   style: TextStyle(fontSize: 25))),
                         ),
                         Container(
-                          height: 200,
+                          height: 130,
                           child: ListView.separated(
                             padding: EdgeInsets.all(2),
                             scrollDirection: Axis.horizontal,
-                            itemCount: 16,
+                            itemCount: 6,
                             separatorBuilder: (context, _) =>
-                                SizedBox(width: 2),
+                                SizedBox(width: 4),
                             itemBuilder: (context, index) =>
                                 buildCard(item: items1[index]),
+                          ),
+                        ),
+                        Container(
+                          margin:
+                              EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+                          width: MediaQuery.of(context).size.width - 100,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              color: Colors.green[100],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15))),
+                          child: Center(
+                              child: Text('Tercer grupo',
+                                  style: TextStyle(fontSize: 25))),
+                        ),
+                        Container(
+                          height: 130,
+                          child: ListView.separated(
+                            padding: EdgeInsets.all(2),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 6,
+                            separatorBuilder: (context, _) =>
+                                SizedBox(width: 4),
+                            itemBuilder: (context, index) =>
+                                buildCard(item: items2[index]),
                           ),
                         ),
                       ],
@@ -474,43 +415,46 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     required CardItem item,
   }) =>
       Container(
-        width: 200,
+        width: 150,
         child: Column(
           children: [
-            Expanded(
-              child: AspectRatio(
-                aspectRatio: 4 / 3,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
-                  child: Material(
-                    child: Ink.image(
-                      image: AssetImage(item.downloadedImage),
-                      fit: BoxFit.cover,
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ShowImage(
-                              item: item,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Material(
+                  color: Color(0xFFB235B4E),
+                  child: Center(
+                    child: Ink(
+                        //color: Colors.amber,
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            //color: Colors.red,
+                            height: 60,
+                            width: 60,
+                            child: item.satIcon,
+                          ),
+                          SizedBox(
+                            height: 0,
+                          ),
+                          Container(
+                            //color: Colors.yellow,
+                            height: 40,
+                            child: Center(
+                              child: Text(item.title,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.white)),
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 4,
-            ),
-            Text(
-              item.title,
-              style: TextStyle(fontSize: 24, color: Colors.black),
-            ),
-            Text(
-              item.subtitle,
-              style: TextStyle(fontSize: 20, color: Colors.black),
+                          SizedBox(
+                            height: 5,
+                          ),
+                        ])),
+                  )),
             ),
           ],
         ),
