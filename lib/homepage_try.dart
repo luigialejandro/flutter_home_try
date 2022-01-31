@@ -20,7 +20,28 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  final List<MyTabs> _tabs = [
+    new MyTabs(title: "lamc2402@gmail.com", color: Colors.green),
+    new MyTabs(title: "MOCL910224SB2", color: Colors.red[200]),
+    new MyTabs(title: "Buzón activo", color: Colors.indigo[200])
+  ];
+
+  late MyTabs _myHandler;
+  late TabController _controller;
+  void initState() {
+    super.initState();
+    _controller = new TabController(length: 3, vsync: this);
+    _myHandler = _tabs[0];
+    _controller.addListener(_handleSelected);
+  }
+
+  void _handleSelected() {
+    setState(() {
+      _myHandler = _tabs[_controller.index];
+    });
+  }
+
   List<CardItem> items = [
     const CardItem(
       downloadedImage: "assets/images/Ambrym.png",
@@ -189,55 +210,57 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Avatar y nombre'),
-          //centerTitle: true,
-          leading: IconButton(
-              onPressed: () {
-                print('Hello');
-              },
-              icon: Icon(Icons.menu)),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.notifications_active_rounded),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {},
-            ),
-          ],
-          //backgroundColor: Colors.purpleAccent,
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-              colors: [Color(0xFFB235B4E), Color(0xFFBDDC9A3)],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
-            )),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_myHandler.title,
+            style: TextStyle(
+                fontSize: 18, fontWeight: FontWeight.w900, color: Colors.red)),
+        backgroundColor: _myHandler.color,
+        //centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              print('Hello');
+            },
+            icon: Icon(Icons.menu)),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.notifications_active_rounded),
+            onPressed: () {},
           ),
-          bottom: TabBar(
-            indicatorColor: Colors.white,
-            indicatorWeight: 3,
-            tabs: [
-              Tab(icon: Icon(Icons.home), text: 'Contacto'),
-              Tab(icon: Icon(Icons.assignment_ind_rounded), text: 'RFC'),
-              Tab(icon: Icon(Icons.markunread_mailbox_rounded), text: 'Buzón'),
-            ],
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
           ),
-          elevation: 20,
-          titleSpacing: 25,
-        ),
-        body: TabBarView(
-          children: [
-            buildPage(),
-            buildPage(),
-            buildPage(),
+        ],
+        //backgroundColor: Colors.purpleAccent,
+        //flexibleSpace: Container(
+        //  decoration: BoxDecoration(
+        //      gradient: LinearGradient(
+        //    colors: [Color(0xFFB235B4E), Color(0xFFBDDC9A3)],
+        //    begin: Alignment.bottomRight,
+        //    end: Alignment.topLeft,
+        //  )),
+        //),
+        bottom: TabBar(
+          controller: _controller,
+          indicatorColor: Colors.white,
+          indicatorWeight: 3,
+          tabs: [
+            Tab(icon: Icon(Icons.home), text: 'Contacto'),
+            Tab(icon: Icon(Icons.assignment_ind_rounded), text: 'RFC'),
+            Tab(icon: Icon(Icons.markunread_mailbox_rounded), text: 'Buzón'),
           ],
         ),
+        elevation: 20,
+        titleSpacing: 2,
+      ),
+      body: TabBarView(
+        controller: _controller,
+        children: [
+          buildPage(),
+          buildPage(),
+          buildPage(),
+        ],
       ),
     );
   }
@@ -492,4 +515,10 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       );
+}
+
+class MyTabs {
+  final String title;
+  final Color? color;
+  MyTabs({this.title = '', this.color});
 }
